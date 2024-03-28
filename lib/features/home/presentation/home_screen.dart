@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_starter_template/config/router/app_route.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,9 +9,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.title)),
-      body: const Center(
-        child: Text('HOME'),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.title),
+        actions: [
+          IconButton(
+            onPressed: () => context.pushNamed(AppRoute.settings.name),
+            icon: const Icon(Icons.settings),
+          )
+        ],
       ),
     );
   }

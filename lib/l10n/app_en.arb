@@ -1,4 +1,10 @@
 {
     "@@locale": "en",
-    "title": "Title"
+    "title": "Flutter starter template",
+    "settings": "Settings",
+    "system": "System",
+    "dark": "Dark",
+    "light": "Light",
+    "close": "Close",
+    "theme": "Theme"
 }
