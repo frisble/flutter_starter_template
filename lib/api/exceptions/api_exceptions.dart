@@ -32,7 +32,6 @@ class BadRequestException extends APIException {
 }
 
 class UserNotRegisteredException extends APIException {
-  // final AuthCredential authCredential;
   UserNotRegisteredException() : super('message.userNotRegistered');
 }
 
