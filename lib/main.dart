@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_starter_template/config/extensions/l10n.dart';
 import 'package:flutter_starter_template/config/router/app_router.dart';
 import 'package:flutter_starter_template/config/theme/app_theme.dart';
 import 'package:flutter_starter_template/config/utils.dart';
@@ -28,7 +29,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   Widget build(BuildContext context) {
     final theme = ref.watch(themeControllerProvider);
     return MaterialApp.router(
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
+      onGenerateTitle: (context) => context.l10n.title,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       debugShowCheckedModeBanner: Utils.isDev,
       supportedLocales: AppLocalizations.supportedLocales,

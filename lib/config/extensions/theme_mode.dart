@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_starter_template/config/extensions/l10n.dart';
 
 extension ThemeModeX on ThemeMode {
   String themeModeName(BuildContext context) {
     switch (this) {
       case ThemeMode.system:
-        return AppLocalizations.of(context)!.system;
+        return context.l10n.system;
       case ThemeMode.light:
-        return AppLocalizations.of(context)!.light;
+        return context.l10n.light;
       case ThemeMode.dark:
-        return AppLocalizations.of(context)!.dark;
+        return context.l10n.dark;
     }
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_starter_template/config/extensions/l10n.dart';
 import 'package:flutter_starter_template/config/extensions/theme_mode.dart';
 import 'package:flutter_starter_template/features/theme/controller/theme_controller.dart';
 import 'package:go_router/go_router.dart';
@@ -12,7 +12,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.settings),
+        title: Text(context.l10n.settings),
       ),
       body: const Column(
         children: [
@@ -30,7 +30,7 @@ class _ThemeTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeController = ref.watch(themeControllerProvider);
     return ListTile(
-      title: Text(AppLocalizations.of(context)!.theme),
+      title: Text(context.l10n.theme),
       leading: _leading(themeController.value),
       subtitle: Text(
         themeController.value != null
@@ -41,7 +41,7 @@ class _ThemeTile extends ConsumerWidget {
         context: context,
         builder: (context) => AlertDialog(
           contentPadding: const EdgeInsets.symmetric(vertical: 8),
-          title: Text(AppLocalizations.of(context)!.theme),
+          title: Text(context.l10n.theme),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: ThemeMode.values
@@ -60,7 +60,7 @@ class _ThemeTile extends ConsumerWidget {
           actions: [
             TextButton(
               onPressed: () => context.pop(),
-              child: Text(AppLocalizations.of(context)!.close),
+              child: Text(context.l10n.close),
             )
           ],
         ),
